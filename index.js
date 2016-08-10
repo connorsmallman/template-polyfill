@@ -1,6 +1,6 @@
 'use strict';
 
-function templatePolyfill() {
+module.exports = (function templatePolyfill() {
   if ('content' in document.createElement('template')) {
     return false;
   }
@@ -19,6 +19,4 @@ function templatePolyfill() {
 
     template.content = fragment;
   }
-}
-
-module.exports = templatePolyfill;
+})();
